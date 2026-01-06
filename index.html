@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dandiya Nights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ff2f92;
+      --orange: #ff9800;
+      --purple: #6a1b9a;
+      --dark: #12091f;
+      --light: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #2b1055, #000);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: var(--orange);
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav ul li:hover {
+      color: var(--pink);
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      background: linear-gradient(45deg, var(--pink), var(--orange));
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      padding: 12px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, var(--orange), var(--pink));
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.1);
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 80px 10%;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: var(--orange);
+    }
+
+    /* ---------- EVENTS ---------- */
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 20px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ---------- GALLERY ---------- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery div {
+      height: 180px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery div:hover {
+      transform: scale(1.05);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ---------- ANIMATION ---------- */
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff2f92; }
+      to { text-shadow: 0 0 25px #ff9800; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>DANDIYA ✨</h1>
+    <ul>
+      <li onclick="scrollToSection('home')">Home</li>
+      <li onclick="scrollToSection('events')">Events</li>
+      <li onclick="scrollToSection('gallery')">Gallery</li>
+    </ul>
+  </nav>
+
+  <div class="hero" id="home">
+    <div>
+      <h2>Dandiya Nights 2026</h2>
+      <p>Celebrate rhythm, colors, culture, and joy with energetic Garba & Dandiya beats under the festive lights.</p>
+      <button onclick="joinNow()">Join the Celebration</button>
+    </div>
+  </div>
+
+  <section id="events">
+    <h3>Event Highlights</h3>
+    <div class="events">
+      <div class="card">
+        <h4>🎶 Live Garba Music</h4>
+        <p>Traditional & modern fusion beats all night long.</p>
+      </div>
+      <div class="card">
+        <h4>💃 Dance Workshops</h4>
+        <p>Learn Dandiya steps from expert performers.</p>
+      </div>
+      <div class="card">
+        <h4>🏆 Costume Contest</h4>
+        <p>Win exciting prizes for the best traditional look.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h3>Festival Gallery</h3>
+    <div class="gallery">
+      <div> <img src="https://images.bhaskarassets.com/web2images/521/2022/10/03/whatsapp-image-2022-10-02-at-232247_1664743098.jpg" height="200px" width="239px"> </div>
+      <div> <img src="https://cdnholidays.blueberrygroup.org/BlogImage/4d92a7bf-5bbf-4b64-986d-18b7ef123129.webp" height="200px" width="239px"> </div>
+      <div> <img src="https://files.prokerala.com/news/photos/imgs/1024/people-participate-in-garba-dance-during-the-1928493.jpg" height="200px" width="239px"> </div>
+      <div> <img src="https://images.bhaskarassets.com/web2images/1884/2025/09/22/21728282352_1758552742.gif" height="200px" width="239px"> </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Dandiya Nights | Designed with ❤️ & Rhythm
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function joinNow() {
+      alert("🎉 You’re officially invited to Dandiya Nights! Get ready to dance!");
+    }
+  </script>
+
+</body>
+</html>
 
